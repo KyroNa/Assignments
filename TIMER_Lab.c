@@ -25,9 +25,9 @@ void TIMER_Lab(void)
 	/* Led2 pin */
 	DIO_SetPinDirection(PORTD,Pin3,DIO_Output);
 
+	TIM0_SetTimerValue(153);
 	TIM0_Initialize();
 	TIM0_OverFlowCallBack(TIMER_OV_ISR);
-	TIM0_SetTimerValue(153);
 	GIE_Enable();
 	TIM0_OverFlowIntEnable();
 
